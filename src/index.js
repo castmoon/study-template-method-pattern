@@ -1,0 +1,12 @@
+import OrderBusiness from './business/orderBusiness.js';
+import Order from './entities/order.js';
+
+const order = new Order({
+	customerId: 'abc123',
+	amount: 20,
+	products: [{ description: 'shampoo' }],
+});
+
+const orderBusiness = new OrderBusiness();
+
+console.info('order created', orderBusiness.create(order));
